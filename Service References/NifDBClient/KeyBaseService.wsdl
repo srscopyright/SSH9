@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="KeyBaseService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IKeyBaseServiceV1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IKeyBaseServiceV1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebServices.NifDB.Keybase.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebServices.NifDB.Keybase.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Srs.WebServices.NifDB" />
+      <xsd:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebServices.NifDB.Keybase.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IKeyBaseServiceV1_GetString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetString" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_GetString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_GetString_ServiceOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Srs.WebServices.NifDB" name="detail" element="q1:ServiceOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_Remove_InputMessage">
+    <wsdl:part name="parameters" element="tns:Remove" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_Remove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_Remove_ServiceOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Srs.WebServices.NifDB" name="detail" element="q2:ServiceOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_SaveString_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveString" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_SaveString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_SaveString_ServiceOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Srs.WebServices.NifDB" name="detail" element="q3:ServiceOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_CreateBucket_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBucket" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_CreateBucket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBucketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_CreateBucket_ServiceOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Srs.WebServices.NifDB" name="detail" element="q4:ServiceOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_GetBucketListByProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBucketListByProduct" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_GetBucketListByProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBucketListByProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_GetBucketListByProduct_ServiceOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Srs.WebServices.NifDB" name="detail" element="q5:ServiceOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_DeleteBucket_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBucket" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_DeleteBucket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBucketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKeyBaseServiceV1_DeleteBucket_ServiceOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Srs.WebServices.NifDB" name="detail" element="q6:ServiceOperationFault" />
+  </wsdl:message>
+  <wsdl:portType name="IKeyBaseServiceV1">
+    <wsdl:operation name="GetString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/GetString" message="tns:IKeyBaseServiceV1_GetString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/GetStringResponse" message="tns:IKeyBaseServiceV1_GetString_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/GetStringServiceOperationFaultFault" name="ServiceOperationFaultFault" message="tns:IKeyBaseServiceV1_GetString_ServiceOperationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Remove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/Remove" message="tns:IKeyBaseServiceV1_Remove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/RemoveResponse" message="tns:IKeyBaseServiceV1_Remove_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/RemoveServiceOperationFaultFault" name="ServiceOperationFaultFault" message="tns:IKeyBaseServiceV1_Remove_ServiceOperationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/SaveString" message="tns:IKeyBaseServiceV1_SaveString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/SaveStringResponse" message="tns:IKeyBaseServiceV1_SaveString_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/SaveStringServiceOperationFaultFault" name="ServiceOperationFaultFault" message="tns:IKeyBaseServiceV1_SaveString_ServiceOperationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBucket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/CreateBucket" message="tns:IKeyBaseServiceV1_CreateBucket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/CreateBucketResponse" message="tns:IKeyBaseServiceV1_CreateBucket_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/CreateBucketServiceOperationFaultFault" name="ServiceOperationFaultFault" message="tns:IKeyBaseServiceV1_CreateBucket_ServiceOperationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBucketListByProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/GetBucketListByProduct" message="tns:IKeyBaseServiceV1_GetBucketListByProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/GetBucketListByProductResponse" message="tns:IKeyBaseServiceV1_GetBucketListByProduct_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/GetBucketListByProductServiceOperationFaultFault" name="ServiceOperationFaultFault" message="tns:IKeyBaseServiceV1_GetBucketListByProduct_ServiceOperationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBucket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/DeleteBucket" message="tns:IKeyBaseServiceV1_DeleteBucket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/DeleteBucketResponse" message="tns:IKeyBaseServiceV1_DeleteBucket_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IKeyBaseServiceV1/DeleteBucketServiceOperationFaultFault" name="ServiceOperationFaultFault" message="tns:IKeyBaseServiceV1_DeleteBucket_ServiceOperationFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IKeyBaseServiceV1" type="tns:IKeyBaseServiceV1">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IKeyBaseServiceV1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetString">
+      <soap:operation soapAction="http://tempuri.org/IKeyBaseServiceV1/GetString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceOperationFaultFault">
+        <soap:fault use="literal" name="ServiceOperationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Remove">
+      <soap:operation soapAction="http://tempuri.org/IKeyBaseServiceV1/Remove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceOperationFaultFault">
+        <soap:fault use="literal" name="ServiceOperationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveString">
+      <soap:operation soapAction="http://tempuri.org/IKeyBaseServiceV1/SaveString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceOperationFaultFault">
+        <soap:fault use="literal" name="ServiceOperationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBucket">
+      <soap:operation soapAction="http://tempuri.org/IKeyBaseServiceV1/CreateBucket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceOperationFaultFault">
+        <soap:fault use="literal" name="ServiceOperationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBucketListByProduct">
+      <soap:operation soapAction="http://tempuri.org/IKeyBaseServiceV1/GetBucketListByProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceOperationFaultFault">
+        <soap:fault use="literal" name="ServiceOperationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBucket">
+      <soap:operation soapAction="http://tempuri.org/IKeyBaseServiceV1/DeleteBucket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceOperationFaultFault">
+        <soap:fault use="literal" name="ServiceOperationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IKeyBaseServiceV1" type="tns:IKeyBaseServiceV1">
+    <wsp:PolicyReference URI="#WSHttpBinding_IKeyBaseServiceV1_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetString">
+      <soap12:operation soapAction="http://tempuri.org/IKeyBaseServiceV1/GetString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceOperationFaultFault">
+        <soap12:fault use="literal" name="ServiceOperationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Remove">
+      <soap12:operation soapAction="http://tempuri.org/IKeyBaseServiceV1/Remove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceOperationFaultFault">
+        <soap12:fault use="literal" name="ServiceOperationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveString">
+      <soap12:operation soapAction="http://tempuri.org/IKeyBaseServiceV1/SaveString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceOperationFaultFault">
+        <soap12:fault use="literal" name="ServiceOperationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBucket">
+      <soap12:operation soapAction="http://tempuri.org/IKeyBaseServiceV1/CreateBucket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceOperationFaultFault">
+        <soap12:fault use="literal" name="ServiceOperationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBucketListByProduct">
+      <soap12:operation soapAction="http://tempuri.org/IKeyBaseServiceV1/GetBucketListByProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceOperationFaultFault">
+        <soap12:fault use="literal" name="ServiceOperationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBucket">
+      <soap12:operation soapAction="http://tempuri.org/IKeyBaseServiceV1/DeleteBucket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceOperationFaultFault">
+        <soap12:fault use="literal" name="ServiceOperationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KeyBaseService">
+    <wsdl:port name="BasicHttpBinding_IKeyBaseServiceV1" binding="tns:BasicHttpBinding_IKeyBaseServiceV1">
+      <soap:address location="https://securitysandbox.srsplatform.com/WebServices/Srs.WebServices.NifDB.Keybase.svc/BASIC" />
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IKeyBaseServiceV1" binding="tns:WSHttpBinding_IKeyBaseServiceV1">
+      <soap12:address location="https://securitysandbox.srsplatform.com/WebServices/Srs.WebServices.NifDB.Keybase.svc/WS" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://securitysandbox.srsplatform.com/WebServices/Srs.WebServices.NifDB.Keybase.svc/WS</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

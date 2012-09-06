@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- =====COPYRIGHT===== -->
+<!-- Copyright 2007 - 2012 Service Repair Solutions, Inc. -->
+<!-- =====COPYRIGHT===== -->
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" />
+  <xs:element name="ValidateSessionToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionTokenId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="methodGuid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateSessionTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" minOccurs="0" name="ValidateSessionTokenResult" nillable="true" type="q1:WebServiceObjectResponseV1OfAuthorizationV1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSessionTokenById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionTokenId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSessionTokenByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" minOccurs="0" name="GetSessionTokenByIdResult" nillable="true" type="q2:WebServiceObjectResponseV1OfSessionTokenV1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSessionToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSessionTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" minOccurs="0" name="CreateSessionTokenResult" nillable="true" type="q3:WebServiceObjectResponseV1OfSessionTokenV1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSessionTokenForPortalUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="portalUserGuid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSessionTokenForPortalUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" minOccurs="0" name="CreateSessionTokenForPortalUserResult" nillable="true" type="q4:WebServiceObjectResponseV1OfSessionTokenV1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSessionTokenForDevice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="fingerprint" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="portalUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSessionTokenForDeviceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" minOccurs="0" name="CreateSessionTokenForDeviceResult" nillable="true" type="q5:WebServiceObjectResponseV1OfSessionTokenV1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSessionTokenByPortalUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionTokenId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="portalUserId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSessionTokenByPortalUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" minOccurs="0" name="GetSessionTokenByPortalUserIdResult" nillable="true" type="q6:WebServiceCollectionResponseV1OfSessionTokenV1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSessionTokenByCriteria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionTokenId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionTokenGuid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passportCrmGuid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passportGuid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSessionTokenByCriteriaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" minOccurs="0" name="GetSessionTokenByCriteriaResult" nillable="true" type="q7:WebServiceCollectionResponseV1OfSessionTokenV1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExpireSessionToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionTokenId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="targetSessionTokenId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExpireSessionTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" minOccurs="0" name="ExpireSessionTokenResult" nillable="true" type="q8:WebServiceObjectResponseV1OfSessionTokenV1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

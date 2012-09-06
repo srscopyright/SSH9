@@ -1,0 +1,237 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/themes/base/jquery-ui.css")" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/MicrosoftAjax.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/MicrosoftMvcAjax.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.placeholder.js")" type="text/javascript"></script>
+@model WebServices.Copyright.WebApplication.Models.Copyright
+<div id="result">
+<input id="hiddenresult" type="hidden"/>
+ @using (Ajax.BeginForm("Index", "Home", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        LoadingElementId = "loading1"
+    }))
+        {
+    <div id="dvConfiguration">
+    <div style="float: left;margin-top:10px;">
+        <h3>
+            Automatically add copyright headers to your code
+            </h3>
+            </div>
+            <div style="float:right;margin-top:5px;"> 
+            <input id="btnForce" name="btnForce" type="submit" value="Run Now" />
+            </div>
+    </div>
+    <div id="dvConfigurationContain">
+       
+            @Html.ValidationSummary(true)
+       
+
+         
+            @Html.HiddenFor(model => model.ForceMessage)
+            @Html.HiddenFor(model => model.ProjectName)
+            <table>
+                <tr>
+                    <td id="labletd">
+                        Enabled:
+                    </td>
+                    <td>
+                        <div style="float: left">@Html.CheckBoxFor(model => model.ActiveStatus)</div>
+                        
+                        <div style="padding-left: 30px;float: left"><a href="javascript:window.location.reload();">Running status:</a>@Html.DisplayFor(model=> model.RunningStatus)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top">
+                        Copyright text:
+                    </td>
+                    <td>@Html.EditorFor(model => model.CopyrightText)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td id="td_note">
+                        * If the [currentYear] variable (including brackets) is used, it will be replaced
+                        with the current year.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(model => model.CopyrightText)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Source control type:</td>
+                    <td>
+                        @Html.DropDownList("ddlSourceType", (SelectList)ViewData["control_type"], new { @class = "ddlist", @onchange = "SourceTypeOnChange(this.value);"})
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="lblRepoURL">Repository URL:</div>
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.RepositoryUrl, new { placeholder = "Enter your project's Github repository URL here" ,@class="required"})
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Failure Alert Recipients:
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.Emailreport, new { placeholder = "Enter list of email addresses (semicolon-separated)" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(model => model.RepositoryUrl)
+                    </td>
+                </tr>
+              
+            </table>
+            <div id="tdcenter">
+            <input id="btnSave" name="btnSave" type="submit" value="Save" class="submit" />
+                       
+            </div>
+            <div id="tdcenter">
+                    @*<div id="red_message" style="color: red">
+                        </div>
+                        <div id="green_message" style="color: green">
+                        </div>*@
+                        <div id="dvSpace"></div>
+                        <div id="flash" style="display:none">
+                            <div class="alert-message"></div>
+                        </div>
+            </div>
+           
+
+            <div id="loading1" style="display: none; text-align: center;">
+                <div id="loading" style="text-align: center;">
+                </div>
+                <div id="gif_div">
+                    <img src="../../Content/themes/base/images/loading.gif" />
+                    <div id="wait_text">
+                        Waiting...</div>
+                </div>
+            </div>
+        
+        
+        
+    </div>
+     }
+    <div id="dvSpace"></div>
+    <div id="dvFAQ">
+        <h3>
+            FAQ</h3>
+    </div>
+    <div id="dvFAQContain">
+        <div>
+            <h4>
+                What is it?</h4>
+            <br>
+            SRSWP Copyright service injects headers into your project's source code files
+            containing the copyright information you specify above. This helps you stay in compliance
+            with the requirement to include copyright information in all source code files created
+            in SRS projects.
+            <br>
+            <br>
+            <h4>
+                How does it work?</h4>
+            <br>
+            The service gets a copy of your project's files from the repository, analyzes the
+            files, and applies copyright headers to any files that are missing them. It then
+            commits the changes to your repository.
+            <br>
+            <br>
+            <h4>
+                How often does it run?</h4>
+            <br>
+            The service will check your project and add any missing headers once per day. You
+            can force the service to run by clicking the Run Now button.
+            <br>
+            <br>
+            <h4>
+                How do I exclude third-party files?</h4>
+            <br>
+            Some files contained within your project should not have SRS copyright headers applied
+            to them due to the fact that they were obtained from a third-party, e.g., jQuery,
+            etc. These files should be excluded from the Copyright process by including ".nofileheader"
+            files in your project.
+            <br>
+            <br>
+            To have Copyright skip files:
+            <ul>
+                <li>Place a <span style="text-decoration: underline;">blank</span> file named ".nofileheader"
+                    in a directory
+                    <ul>
+                        <li>All files in the same directory and all of its child directories and files will
+                            be skipped</li></ul>
+                </li>
+                OR
+                <br>
+                <li>Place a file named ".nofileheader" containing names of files and directories in
+                    a directory
+                    <ul>
+                        <li>Any files or directories included in the file are skipped</li></ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="msg-dialog" title="Copyright">
+<p>The Copyright service is already running.</p>
+</div>
+</div>
+<script>
+    $(function () {
+        // Invoke the plugin
+        $('input, textarea').placeholder();
+    });
+    
+    //alert(document.getElementById("ddlSourceType").value);
+</script>
+<script type="text/javascript">
+    $('#msg-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "OK": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+</script>
+<script>
+    function SourceTypeOnChange(type) {
+
+        if (type=='GIT') {
+            document.getElementById("lblRepoURL").innerHTML = "Repository URL:";
+            document.getElementById("RepositoryUrl").placeholder = "Enter your project's Github repository URL here";
+        }
+        else {
+            document.getElementById("lblRepoURL").innerHTML = "TFS Path:";
+            document.getElementById("RepositoryUrl").placeholder = "Enter your project's TFS path here";
+        }
+    }
+</script>
+<script>
+    SourceTypeOnChange(document.getElementById("ddlSourceType").value);
+</script>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SessionTokenService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_ISessionTokenServiceV2_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ISessionTokenServiceV2_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" />
+      <xsd:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.SrsWPSite" />
+      <xsd:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISessionTokenServiceV2_ValidateSessionToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateSessionToken" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_ValidateSessionToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateSessionTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_GetSessionTokenById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionTokenById" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_GetSessionTokenById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionTokenByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_CreateSessionToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSessionToken" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_CreateSessionToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSessionTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_CreateSessionTokenForPortalUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSessionTokenForPortalUser" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_CreateSessionTokenForPortalUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSessionTokenForPortalUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_CreateSessionTokenForDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSessionTokenForDevice" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_CreateSessionTokenForDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSessionTokenForDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_GetSessionTokenByPortalUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionTokenByPortalUserId" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_GetSessionTokenByPortalUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionTokenByPortalUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_GetSessionTokenByCriteria_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionTokenByCriteria" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_GetSessionTokenByCriteria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionTokenByCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_ExpireSessionToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExpireSessionToken" />
+  </wsdl:message>
+  <wsdl:message name="ISessionTokenServiceV2_ExpireSessionToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExpireSessionTokenResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISessionTokenServiceV2">
+    <wsdl:operation name="ValidateSessionToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/ValidateSessionToken" message="tns:ISessionTokenServiceV2_ValidateSessionToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/ValidateSessionTokenResponse" message="tns:ISessionTokenServiceV2_ValidateSessionToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionTokenById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/GetSessionTokenById" message="tns:ISessionTokenServiceV2_GetSessionTokenById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/GetSessionTokenByIdResponse" message="tns:ISessionTokenServiceV2_GetSessionTokenById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSessionToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/CreateSessionToken" message="tns:ISessionTokenServiceV2_CreateSessionToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/CreateSessionTokenResponse" message="tns:ISessionTokenServiceV2_CreateSessionToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSessionTokenForPortalUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/CreateSessionTokenForPortalUser" message="tns:ISessionTokenServiceV2_CreateSessionTokenForPortalUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/CreateSessionTokenForPortalUserResponse" message="tns:ISessionTokenServiceV2_CreateSessionTokenForPortalUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSessionTokenForDevice">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/CreateSessionTokenForDevice" message="tns:ISessionTokenServiceV2_CreateSessionTokenForDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/CreateSessionTokenForDeviceResponse" message="tns:ISessionTokenServiceV2_CreateSessionTokenForDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionTokenByPortalUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/GetSessionTokenByPortalUserId" message="tns:ISessionTokenServiceV2_GetSessionTokenByPortalUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/GetSessionTokenByPortalUserIdResponse" message="tns:ISessionTokenServiceV2_GetSessionTokenByPortalUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionTokenByCriteria">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/GetSessionTokenByCriteria" message="tns:ISessionTokenServiceV2_GetSessionTokenByCriteria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/GetSessionTokenByCriteriaResponse" message="tns:ISessionTokenServiceV2_GetSessionTokenByCriteria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExpireSessionToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/ExpireSessionToken" message="tns:ISessionTokenServiceV2_ExpireSessionToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISessionTokenServiceV2/ExpireSessionTokenResponse" message="tns:ISessionTokenServiceV2_ExpireSessionToken_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISessionTokenServiceV2" type="tns:ISessionTokenServiceV2">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ISessionTokenServiceV2_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidateSessionToken">
+      <soap:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/ValidateSessionToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionTokenById">
+      <soap:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/GetSessionTokenById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSessionToken">
+      <soap:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/CreateSessionToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSessionTokenForPortalUser">
+      <soap:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/CreateSessionTokenForPortalUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSessionTokenForDevice">
+      <soap:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/CreateSessionTokenForDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionTokenByPortalUserId">
+      <soap:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/GetSessionTokenByPortalUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionTokenByCriteria">
+      <soap:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/GetSessionTokenByCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpireSessionToken">
+      <soap:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/ExpireSessionToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_ISessionTokenServiceV2" type="tns:ISessionTokenServiceV2">
+    <wsp:PolicyReference URI="#WSHttpBinding_ISessionTokenServiceV2_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidateSessionToken">
+      <soap12:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/ValidateSessionToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionTokenById">
+      <soap12:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/GetSessionTokenById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSessionToken">
+      <soap12:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/CreateSessionToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSessionTokenForPortalUser">
+      <soap12:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/CreateSessionTokenForPortalUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSessionTokenForDevice">
+      <soap12:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/CreateSessionTokenForDevice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionTokenByPortalUserId">
+      <soap12:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/GetSessionTokenByPortalUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionTokenByCriteria">
+      <soap12:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/GetSessionTokenByCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpireSessionToken">
+      <soap12:operation soapAction="http://tempuri.org/ISessionTokenServiceV2/ExpireSessionToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SessionTokenService">
+    <wsdl:port name="BasicHttpBinding_ISessionTokenServiceV2" binding="tns:BasicHttpBinding_ISessionTokenServiceV2">
+      <soap:address location="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc/BASIC" />
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_ISessionTokenServiceV2" binding="tns:WSHttpBinding_ISessionTokenServiceV2">
+      <soap12:address location="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc/WS" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc/WS</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

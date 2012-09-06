@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="491b5286-9932-42ed-abc0-e1824b501c7a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://securitysandbox.srsplatform.com/WebServices/Srs.WebServices.NifDB.Keybase.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="KeyBaseService.wsdl" MetadataType="Wsdl" ID="9b87a364-14aa-495e-bca6-5672d045515a" SourceId="1" SourceUrl="https://securitysandbox.srsplatform.com/WebServices/Srs.WebServices.NifDB.Keybase.svc?wsdl" />
+    <MetadataFile FileName="Srs.xsd" MetadataType="Schema" ID="87cd4967-2160-443a-8545-c80b8952a9f8" SourceId="1" SourceUrl="https://securitysandbox.srsplatform.com/WebServices/Srs.WebServices.NifDB.Keybase.svc?xsd=xsd2" />
+    <MetadataFile FileName="Srs1.xsd" MetadataType="Schema" ID="b4ff5d3d-4e9f-4527-8350-d17c6f699f09" SourceId="1" SourceUrl="https://securitysandbox.srsplatform.com/WebServices/Srs.WebServices.NifDB.Keybase.svc?xsd=xsd0" />
+    <MetadataFile FileName="Srs2.xsd" MetadataType="Schema" ID="c9846f9c-8f2a-4005-96d5-9a305172e43c" SourceId="1" SourceUrl="https://securitysandbox.srsplatform.com/WebServices/Srs.WebServices.NifDB.Keybase.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

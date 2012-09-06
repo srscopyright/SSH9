@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Srs.WebPlatform.WebServices.Copyright.CopyrightService" elementFormDefault="qualified" targetNamespace="Srs.WebPlatform.WebServices.Copyright.CopyrightService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1111/WebServices/Srs.WebPlatform.WebServices.Copyright.CopyrightService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.Copyright" />
+  <xs:element name="CallFileHeaderEnforcement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="repositoryUrl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="copyrightText" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lstEmail" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallFileHeaderEnforcementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.Copyright" minOccurs="0" name="CallFileHeaderEnforcementResult" nillable="true" type="q1:ObjectResponseV1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsProcessing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="repositoryUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsProcessingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsProcessingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistRepository">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="repositoryUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistRepositoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.Copyright" minOccurs="0" name="IsExistRepositoryResult" nillable="true" type="q2:ObjectResponseV1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloneGitHubRepo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="repositoryUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloneGitHubRepoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CloneGitHubRepoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallFileHeaderTfs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="projectName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tfsPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="copyrightText" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lstEmail" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallFileHeaderTfsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CallFileHeaderTfsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkingItemStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="repositoryUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkingItemStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetWorkingItemStatusResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistSourcePath">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sourcePath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistSourcePathResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsExistSourcePathResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTfsSourceCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="projectName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tfsPath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTfsSourceCodeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmailReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lstEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmailReportResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="27e89290-da74-468d-8d9b-9444bc286ac1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1111/WebServices/Srs.WebPlatform.WebServices.Copyright.CopyrightService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Srs.wsdl" MetadataType="Wsdl" ID="27fad44d-ca19-441c-b67f-1e95098b9614" SourceId="1" SourceUrl="http://localhost:1111/WebServices/Srs.WebPlatform.WebServices.Copyright.CopyrightService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Srs1.xsd" MetadataType="Schema" ID="d4e429a3-931d-40e7-b8d6-5cf0a25c27c6" SourceId="1" SourceUrl="http://localhost:1111/WebServices/Srs.WebPlatform.WebServices.Copyright.CopyrightService.svc?xsd=xsd0" />
+    <MetadataFile FileName="Srs.disco" MetadataType="Disco" ID="f0b0fb29-e0e9-4b39-a1c7-5c17a80e4fc0" SourceId="1" SourceUrl="http://localhost:1111/WebServices/Srs.WebPlatform.WebServices.Copyright.CopyrightService.svc?disco" />
+    <MetadataFile FileName="Srs.xsd" MetadataType="Schema" ID="1f06ece0-d696-4cf6-9d68-45a325bcdb9b" SourceId="1" SourceUrl="http://localhost:1111/WebServices/Srs.WebPlatform.WebServices.Copyright.CopyrightService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CopyrightService.wsdl" MetadataType="Wsdl" ID="76b6cf2e-7d86-4a5d-a711-2cb4e5046434" SourceId="1" SourceUrl="http://localhost:1111/WebServices/Srs.WebPlatform.WebServices.Copyright.CopyrightService.svc?wsdl" />
+    <MetadataFile FileName="Srs21.xsd" MetadataType="Schema" ID="0a98fed7-4f86-4850-a58e-388488f77755" SourceId="1" SourceUrl="http://localhost:1111/WebServices/Srs.WebPlatform.WebServices.Copyright.CopyrightService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

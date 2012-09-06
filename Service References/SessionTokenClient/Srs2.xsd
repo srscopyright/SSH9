@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- =====COPYRIGHT===== -->
+<!-- Copyright 2007 - 2012 Service Repair Solutions, Inc. -->
+<!-- =====COPYRIGHT===== -->
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.SrsWPSite" />
+  <xs:complexType name="WebServiceObjectResponseV1OfAuthorizationV1">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="WebServiceObjectResponseV1Of{0}" Namespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AuthorizationV1" Namespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WebServiceReturnObjectV1">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Item" nillable="true" type="tns:AuthorizationV1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WebServiceObjectResponseV1OfAuthorizationV1" nillable="true" type="tns:WebServiceObjectResponseV1OfAuthorizationV1" />
+  <xs:complexType name="WebServiceReturnObjectV1">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TotalRowCount" type="xs:int" />
+      <xs:element minOccurs="0" name="WebServiceMethodResultDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebServiceMethodResultID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceReturnObjectV1" nillable="true" type="tns:WebServiceReturnObjectV1" />
+  <xs:complexType name="AuthorizationV1">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DataAccessCollection" nillable="true" type="q1:ArrayOfguid" />
+      <xs:element minOccurs="0" name="PassportGuid" type="ser:guid" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ProductCollection" nillable="true" type="q2:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthorizationV1" nillable="true" type="tns:AuthorizationV1" />
+  <xs:complexType name="WebServiceObjectResponseV1OfSessionTokenV1">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="WebServiceObjectResponseV1Of{0}" Namespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SessionTokenV1" Namespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.SrsWPSite" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WebServiceReturnObjectV1">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.SrsWPSite" minOccurs="0" name="Item" nillable="true" type="q3:SessionTokenV1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WebServiceObjectResponseV1OfSessionTokenV1" nillable="true" type="tns:WebServiceObjectResponseV1OfSessionTokenV1" />
+  <xs:complexType name="WebServiceCollectionResponseV1OfSessionTokenV1">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="WebServiceCollectionResponseV1Of{0}" Namespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SessionTokenV1" Namespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.SrsWPSite" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WebServiceReturnObjectV1">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.SrsWPSite" minOccurs="0" name="Items" nillable="true" type="q4:ArrayOfSessionTokenV1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WebServiceCollectionResponseV1OfSessionTokenV1" nillable="true" type="tns:WebServiceCollectionResponseV1OfSessionTokenV1" />
+</xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- =====COPYRIGHT===== -->
+<!-- Copyright 2007 - 2012 Service Repair Solutions, Inc. -->
+<!-- =====COPYRIGHT===== -->
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.SrsWPSite" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.SrsWPSite" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="SessionTokenV1">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthorizedSessionToken" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="SessionToken_CreatedAt" type="q1:DateTimeOffset" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="SessionToken_ExpirationAt" type="q2:DateTimeOffset" />
+      <xs:element minOccurs="0" name="SessionToken_PortalUserId" type="xs:int" />
+      <xs:element minOccurs="0" name="SessionToken_SessionTokenGUId" type="ser:guid" />
+      <xs:element minOccurs="0" name="SessionToken_SessionTokenId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SessionTokenV1" nillable="true" type="tns:SessionTokenV1" />
+  <xs:complexType name="ArrayOfSessionTokenV1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SessionTokenV1" nillable="true" type="tns:SessionTokenV1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSessionTokenV1" nillable="true" type="tns:ArrayOfSessionTokenV1" />
+</xs:schema>
