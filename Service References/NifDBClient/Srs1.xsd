@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- =====COPYRIGHT===== -->
-<!-- Copyright 2007 - 2012 Service Repair Solutions, Inc. -->
+<!-- github ssh copyright text123 -->
 <!-- =====COPYRIGHT===== -->
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="GetString">

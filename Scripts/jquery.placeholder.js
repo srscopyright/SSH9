@@ -1,5 +1,5 @@
 // =====COPYRIGHT=====
-// Copyright 2007 - 2012 Service Repair Solutions, Inc.
+// github ssh copyright text123
 // =====COPYRIGHT=====
 /*! http://mths.be/placeholder v2.0.6 by @mathias */
 ;(function(window, document, $) {

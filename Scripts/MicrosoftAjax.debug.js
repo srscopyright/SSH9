@@ -1,5 +1,5 @@
 // =====COPYRIGHT=====
-// Copyright 2007 - 2012 Service Repair Solutions, Inc.
+// github ssh copyright text123
 // =====COPYRIGHT=====
 // Name:        MicrosoftAjax.debug.js
 // Assembly:    System.Web.Extensions

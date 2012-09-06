@@ -1,5 +1,5 @@
 // =====COPYRIGHT=====
-// Copyright 2007 - 2012 Service Repair Solutions, Inc.
+// github ssh copyright text123
 // =====COPYRIGHT=====
 /*
 * This file has been commented to support Visual Studio Intellisense.

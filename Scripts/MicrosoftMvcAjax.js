@@ -1,5 +1,5 @@
 // =====COPYRIGHT=====
-// Copyright 2007 - 2012 Service Repair Solutions, Inc.
+// github ssh copyright text123
 // =====COPYRIGHT=====
 //----------------------------------------------------------
 // Copyright (C) Microsoft Corporation. All rights reserved.

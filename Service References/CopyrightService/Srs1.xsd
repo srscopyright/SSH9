@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- =====COPYRIGHT===== -->
+<!-- github ssh copyright text123 -->
+<!-- =====COPYRIGHT===== -->
 <xs:schema xmlns:tns="Srs.WebPlatform.WebServices.Copyright.CopyrightService" elementFormDefault="qualified" targetNamespace="Srs.WebPlatform.WebServices.Copyright.CopyrightService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:1111/WebServices/Srs.WebPlatform.WebServices.Copyright.CopyrightService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.Copyright" />
   <xs:element name="CallFileHeaderEnforcement">

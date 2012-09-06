@@ -1,5 +1,5 @@
 // =====COPYRIGHT=====
-// Copyright 2007 - 2012 Service Repair Solutions, Inc.
+// github ssh copyright text123
 // =====COPYRIGHT=====
 /*!
  * Note: While Microsoft is not the author of this file, Microsoft is

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- =====COPYRIGHT===== -->
-<!-- Copyright 2007 - 2012 Service Repair Solutions, Inc. -->
+<!-- github ssh copyright text123 -->
 <!-- =====COPYRIGHT===== -->
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.SrsWPSite" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Srs.WebPlatform.WebServices.SrsWPSite" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="https://securitysandbox.srsplatform.com/WebServices/Srs.WebPlatform.WebServices.SrsWPSite.SessionTokenService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
